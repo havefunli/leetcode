@@ -2,4 +2,5 @@
 C:\Users\acer\Desktop\leetcode\7_11\长度最小的子数组.cpp(16,19): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
 C:\Users\acer\Desktop\leetcode\7_11\长度最小的子数组.cpp(17,19): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
 C:\Users\acer\Desktop\leetcode\7_11\长度最小的子数组.cpp(23,31): warning C4267: “=”: 从“size_t”转换到“int”，可能丢失数据
+C:\Users\acer\Desktop\leetcode\7_11\长度最小的子数组.cpp(30,33): warning C4267: “=”: 从“size_t”转换到“int”，可能丢失数据
   7_11.vcxproj -> C:\Users\acer\Desktop\leetcode\7_11\x64\Debug\7_11.exe

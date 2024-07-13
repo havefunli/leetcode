@@ -27,7 +27,7 @@ public:
 
             if (l == r) {
                 if (Sum[l] - Sum[i - 1] >= target) {
-                    Len = l - i + 1;
+                    Len = Len < l - i + 1 ? Len : l - i + 1;
                 }
             }
         }
@@ -38,8 +38,8 @@ public:
 
 int main() {
     Solution s1;
-    vector<int> v = { 2,3,1,2,4,3 };
-    s1.minSubArrayLen(7, v);
+    vector<int> v = { 10,7,4,9,2,8 };
+    s1.minSubArrayLen(15, v);
 
     return 0;
 }
