@@ -129,6 +129,7 @@
   <ItemGroup>
     <ClCompile Include="差分.cpp" />
     <ClCompile Include="差分矩阵.cpp" />
+    <ClCompile Include="数组元素的目标和.cpp" />
     <ClCompile Include="最长连续不重复子序列.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

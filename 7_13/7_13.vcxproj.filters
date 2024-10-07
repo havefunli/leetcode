@@ -24,5 +24,8 @@
     <ClCompile Include="最长连续不重复子序列.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="数组元素的目标和.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
