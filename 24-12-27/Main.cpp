@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include <sstream>
 #include <stack>
 using namespace std;
 
@@ -142,29 +143,73 @@ using namespace std;
 //    return v;
 //}
 
-int trap(vector<int>& height) {
-    int v = 0;
-    stack<int> st;
-    st.push(0);
+//int trap(vector<int>& height) {
+//    int v = 0;
+//    stack<int> st;
+//    st.push(0);
+//
+//    for (int i = 1; i < height.size(); i++) {
+//        while (!st.empty() && height[i] > height[st.top()]) {
+//            // 获取中间元素
+//            int mid = height[st.top()];
+//            st.pop();
+//            if (!st.empty()) {
+//                int h = min(height[st.top()], height[i]) - mid;
+//                v += h * (i - st.top() - 1);
+//            }
+//        }
+//        st.push(i);
+//    }
+//
+//    return v;
+//}
 
-    for (int i = 1; i < height.size(); i++) {
-        while (!st.empty() && height[i] > height[st.top()]) {
-            // 获取中间元素
-            int mid = height[st.top()];
-            st.pop();
-            if (!st.empty()) {
-                int h = min(height[st.top()], height[i]) - mid;
-                v += h * (i - st.top() - 1);
+
+class Solution {
+public:
+    int myAtoi(string s) {
+        // 去除空格
+        stringstream ss(s);
+        ss >> s;
+        // 转化逻辑
+        int flag = 1;
+        int ans = 0;
+        for (int i = 0; i < s.size(); i++) {
+            char c = s[i];
+
+            if (c == '+' || c == '-') {
+                // 出错
+                if (i != 0) {
+                    return 0;
+                }
+                flag = (c == '+' ? 1 : -1);
+            }
+            else if (c < '0' || c > '9') {
+                return ans;
+            }
+            else {
+                int n = c - '0';
+                ans = ans * 10 + n;
             }
         }
-        st.push(i);
-    }
 
-    return v;
-}
+        ans *= flag;
+        if (ans > INT_MAX) {
+            return INT_MAX;
+        }
+        else if (ans < INT_MIN) {
+            return INT_MIN;
+        }
+        else {
+            return ans;
+        }
+    }
+};
 
 int main() {
-    vector<int> vec = { 4,2,0,3,2,5 };
-    trap(vec);
+    Solution s;
+    string str = "  -0012a42";
+    s.myAtoi(str);
+
 	return 0;
 }
